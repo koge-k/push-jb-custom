@@ -1,3 +1,8 @@
+<?php
+var_dump(1);
+
+
+?>
 <html>
 <body>
 <div>

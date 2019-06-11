@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://salesforcedemo.com/community/post/web-push-notification-journey-builder-custom-activity -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Web Push Notification Journey Builder Custom Activity | Demo Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="f8Lrsc6Z-Hlm3hAYnZzdmQZOUyC1hpL3IqCM">
+  <link rel="icon" href="https://s3.amazonaws.com/rd-ux/images/favicon.ico">
+  <link rel="shortcut icon" href="https://s3.amazonaws.com/rd-ux/images/favicon.ico">
+  <link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/font-awesome.min.css">
+  <link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/salesforce-lightning-design-system.min.css">
+  <link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/rowReorder.dataTables.min.css">
+  <link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.slds.min.css">
+  <link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/styles.min.css">
+
+  <link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/fontawesome.min.css">
+<link rel="stylesheet" href="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/prism.min.css">
+
+</head>
+<body class="vsc-initialized">
+  <!-- GOOGLE ANALYTICS -->
+  <script async="" src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/analytics.js"></script><script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-63476259-3', 'auto');
+    ga('send', 'pageview');
+    
+      ga('set', 'userId', 'd47ef7d0-5414-11e8-b6d9-91f2fa97798d');
+      
+        ga('set', 'dimension1', 'd47ef7d0-5414-11e8-b6d9-91f2fa97798d');
+      
+      
+        ga('set', 'dimension2', 'SE');
+      
+      
+        ga('set', 'dimension3', '5500-ENTR SE');
+      
+    
+  </script>
+
+<div id="page-wrapper">
+  <div id="page-header-container" class="slds-grid slds-wrap header__wrap slds-theme_default">
+    <header id="page-header" class="header slds-size_1-of-1 slds-p-vertical_medium slds-container_x-large slds-container_center">
+      <div class="header__logo">
+        <a href="https://salesforcedemo.com/"><img id="brand" width="180" src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/branding-logo-light.svg"></a>
+      </div><!-- /.header__logo -->
+      <div class="header__nav-button">
+        <span>MENU</span>
+        <span></span>
+        <span></span>
+      </div><!-- /.header__nav-button -->
+      <div class="header__nav">
+        <nav>
+          <ul class="header__nav__main-nav">
+            
+            
+            <li class="nav-industries">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/industries">Industries</a>
+            </li>
+            
+            <li class="nav-community global-nav-is-active">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/community">Community</a>
+            </li>
+            
+            <li class="nav-apps">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/apps">Apps &amp; Tools</a>
+            </li>
+            
+            <li class="nav-design-center">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/design-center">Design Center</a>
+            </li>
+            
+            <li class="nav-demo-support">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/demo-support">Demo Support</a>
+            </li>
+            
+            <li>
+              <a href="https://salesforcedemo.com/search" class="header__nav__main-nav__link slds-text-body_regular slds-hide_large">Search</a>
+              <a id="search-btn" class="header__nav__main-nav__search slds-show_large">
+                <span class="slds-icon_container">
+                  <svg aria-hidden="true" class="slds-icon slds-icon_small slds-icon-text-default">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                  </svg>
+                </span>
+              </a>
+            </li>
+          
+            <li class="header__nav__user">
+              <a href="https://salesforcedemo.com/user">
+                <img class="header__nav__user__photo" src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/a1323044908e66cdc852bce9abc02cc8d7fbba5256ff1d046be2adecd33857bd-thumbnail.jpg" alt="avatar">
+                <span class="header__nav__user__photo-tag-mobile">View Profile</span>
+                <span class="header__nav__user__photo-tag-desktop"><i class="fa fa-angle-down"></i></span>
+              </a>
+              <div class="header__nav__user__dropdown__outer slds-p-top_large">
+                <div class="header__nav__user__dropdown slds-p-around_medium">
+                  <ul class="slds-p-bottom_small slds-p-right_xx-large">
+                    <img id="header__nav__user__dropdown__photo" src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/a1323044908e66cdc852bce9abc02cc8d7fbba5256ff1d046be2adecd33857bd.jpg" alt="avatar">
+                    <li class="title">
+                      <a href="https://salesforcedemo.com/user/public/9f956c30-2588-11e8-9967-1de3036acddc/Teruyoshi%20Koyabu" class="is-on-dark">Teruyoshi Koyabu</a>
+                    </li>
+                  </ul>
+                  <ul class="slds-p-vertical_small header__nav__user__dropdown__middle slds-p-right_xx-large">
+                    
+                    <li><a class="is-on-dark" href="https://salesforcedemo.com/community/post/new">Write a Post</a></li>
+                    
+                    <li><a class="is-on-dark" href="https://salesforcedemo.com/user">Preferences</a></li>
+                    
+                    <li><a class="is-on-dark" href="https://salesforcedemo.com/user/collections">My Collections</a></li>
+                    
+                    <li><a class="is-on-dark" href="https://salesforcedemo.com/user/community">My Posts</a></li>
+                    
+                    <li><a class="is-on-dark" href="https://salesforcedemo.com/demo-support/my-cases">My Cases</a></li>
+                    
+                  </ul>
+                  <ul class="slds-p-top_small slds-p-right_xx-large">
+                    <li><a class="is-on-dark" href="https://salesforcedemo.com/auth/end-session"><i class="fa fa-power-off"></i> Logout</a></li>
+                  </ul>
+                </div><!-- /.header__nav__user__dropdown -->
+              </div><!-- /.header__nav__user__dropdown__outer -->
+            </li>
+            
+            <li class="nav-community/post/new slds-hide_large">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/community/post/new">Write a Post</a>
+            </li>
+            
+            <li class="nav-user slds-hide_large">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/user">Preferences</a>
+            </li>
+            
+            <li class="nav-user/collections slds-hide_large">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/user/collections">My Collections</a>
+            </li>
+            
+            <li class="nav-user/community slds-hide_large">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/user/community">My Posts</a>
+            </li>
+            
+            <li class="nav-demo-support/my-cases slds-hide_large">
+              <a class="header__nav__main-nav__link slds-text-body_regular" href="https://salesforcedemo.com/demo-support/my-cases">My Cases</a>
+            </li>
+            
+          </ul>
+        </nav><!-- /.header__nav -->
+      </div><!-- /.header__nav -->
+    </header><!-- /.slds-size_1-of-1 -->
+
+  </div><!-- /.slds-grid slds-wrap -->
+
+  <div id="global-search-bar" class="slds-grid slds-wrap slds-p-vertical_xx-small slds-theme_default slds-is-absolute">
+    <div class="slds-size_1-of-1 slds-grid slds-p-vertical_x-small slds-container_x-large slds-container_center slds-is-relative">
+      <span class="slds-icon_container slds-col slds-grow-none slds-p-right_small slds-p-left_x-small">
+        <svg aria-hidden="true" class="slds-icon slds-icon_small slds-icon-text-default">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+        </svg>
+      </span>
+      <div class="slds-col">
+        <form method="GET" action="https://salesforcedemo.com/search">
+          <div class="search category">
+            <input id="global-search-input" type="text" name="q" placeholder="Search" autocomplete="off" class="prompt slds-p-vertical_xxx-small slds-size_1-of-1">
+            <div class="results"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <main class="slds-is-relative">
+  
+<div class="hero hero-post">
+  <div class="slds-container_x-large slds-container_center slds-p-horizontal_small slds-p-vertical_large">
+    <div class="hero__inner slds-grid slds-grid_vertical-align-center slds-p-top_x-large slds-p-bottom_xx-large">
+      <div class="slds-size_1-of-1">
+        
+        <h1 id="js--article__title" class="js--title__editable slds-p-bottom_small" dir="auto">Web Push Notification Journey Builder Custom Activity</h1>
+        <h3 id="js--article__desc" class="js--desc__editable slds-text-heading_medium" dir="auto">Clickable messages that come from a website and alert you on your desktop or mobile device even when the website is not open in your browser. All driven from Journey Builder!</h3>
+        <div class="slds-p-top_large has-white-text">
+          <a href="https://salesforcedemo.com/user/public/3c7eb970-22f5-11e8-8a95-c748609fda17/Lachlan%20Ross">
+            <img class="img__profile--standard slds-m-right_small" src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/d657dee61944df09e861d5f7a913cda284ae7b121ab9bb9ca06b92b41839c538.png">
+            Lachlan Ross
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slds-container_x-large slds-container_center slds-m-vertical_xx-large slds-grid slds-wrap ">
+  <!-- MAIN BODY -->
+  <div id="article__body" class="slds-size_1-of-1 slds-large-size_3-of-4 has-white-background slds-text-longform text-body--longform">
+    <div class="slds-p-around_xx-large">
+      <!-- date, like, collections -->
+      <div class="slds-grid slds-wrap slds-p-bottom_xx-large">
+        <div class="slds-size_1-of-1 slds-large-size_1-of-2">
+          <span class="slds-text-title_caps">
+            <strong>October 5th 2017</strong>
+          </span>
+          
+            <span class="slds-text-title"> <em>(Modified on October 17th 2017)</em></span>
+          
+        </div>
+        <div class="slds-size_1-of-1 slds-large-size_1-of-2 slds-clearfix">
+          <div class="slds-float_right">
+            <div class="article__sharing">
+              <!-- COLLECTION -->
+              <div class="share-item bookmark">
+                <div class="article__sharing--icon js--collect" data-itemid="62f3d900-22f5-11e8-8a95-c748609fda17" data-collectable="post">
+                  <svg class="slds-icon" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons/cards-sprite.svg#collections"></use>
+                  </svg>
+                  <svg class="slds-icon hover" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/icons/cards-sprite.svg#collections-filled"></use>
+                  </svg>
+                </div><!--/share-item-icon -->
+                <div class="article__sharing--counter has-salesforce-grey-text"></div>
+              </div><!-- /share-item bookmark -->
+              <!-- /COLLECTION -->
+            </div><!-- /article__sharing -->
+          </div><!-- /slds-float_right -->
+        </div>
+      </div>
+      <!-- /date, like, collections-->
+      <!-- alert if archived -->
+      
+      <img src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/684b714b22062b696f82edbd270bfb3d.png"><p>The Web Push Journey Builder Custom Activity allows you to add web browser notifications to your journey interactions.&nbsp;</p><p>The web notifications are clickable messages that come from your website and alert your subscribers on their desktop or mobile device even when the website is not open in their browser!&nbsp; For more information see <a href="https://drive.google.com/open?id=0B-Y5Q9sVXDHpM3NLQkVjOWMzbzQ">Web Push Notification Custom Activity&nbsp;slides</a> below.<br></p><p></p><div class="slds-text-heading--medium slds-p-vertical--xx-small">Which browsers provide support for web push?</div><p></p><p>Safari 7.0.3 (With a market share of 5-7%) was the first to provide support for web push. It was followed by Chrome 42 (market share 40-50% and growing) that provided support for both desktop and android. Mozilla Firefox (market share 16-20%) will be soon announcing its support for web push.</p><p></p><div class="slds-text-heading--medium slds-p-vertical--xx-small">Web Push Journey Builder Custom Activity Pre-requisites:</div><p></p><ol><li>Working MC Learning Account with Journey Builder</li><li><a href="https://www.heroku.com/">Heroku Account</a> - Sign up with your salesforce email address</li><li>An account on the <a href="https://appcenter-auth.s1.marketingcloudapps.com/">MC App Center</a></li><li>An account with <a href="https://firebase.google.com/">Google Firebase</a>&nbsp;(Firebase Cloud Messaging&nbsp; is the service that delivers the notifications)</li></ol><p></p><div class="slds-text-heading--medium slds-p-vertical--xx-small">Installation Steps:</div><ol><li>Create Data Extension to store Web Push Subscriptions/Registrations (See screenshot below)</li><li>Connect that Data Extension to contact model in Contact Builder</li><li>Create App in <a href="https://appcenter-auth.s1.marketingcloudapps.com/">MC App Center</a></li><li>Create Google Cloud Messaging Project in <a href="https://firebase.google.com/">Google Firebase</a></li><li>Deploy &amp; Configure <a href="https://github.com/lwross/push-registration">Web Push Registration App</a> in Heroku via purple <a href="https://heroku.com/deploy?template=https://github.com/lwross/push-registration">Deploy to Heroku</a> Button</li><li>Deploy &amp; Configure <a href="https://github.com/lwross/personalised-browser-push-notification">Web Push JB Custom Activity</a>&nbsp;in Heroku via purple <a href="https://heroku.com/deploy?template=https://github.com/lwross/personalised-browser-push-notification">Deploy to Heroku</a> Button<br></li><li>Register for web push via your newly deployed Web Push Registration App</li><li>Build &amp; activate a test Journey that includes a Web Push</li></ol><p>Below is a 16 minute video showing this entire process from start to finish.</p><p><i>Quick Tip:</i></p><p><i>To build the Data Extension faster, use</i><i>&nbsp;<a href="https://salesforcedemo.com/decreator9000/build">DECreator9000</a>&nbsp;(Thanks&nbsp;</i><i><a href="https://salesforcedemo.com/user/public/William%20Garrison">William Garrison</a>)</i><i>.&nbsp; Use the <a href="https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0">attached sample file</a> as the input to&nbsp;<a href="https://salesforcedemo.com/decreator9000/build">DECreator9000</a> but do be sure to adjust the field types and lengths as necessary to match the DE screenshot below.</i></p><p></p><div id="js--downloads__container"><div class="js--item"><div class="slds-grid slds-p-bottom--large"><a href="https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0" target="_blank"></a><div class="slds-p-left--x-small"><div class="slds-text-heading--small slds-p-top--small"><a href="https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0" target="_blank">WebPushRegistrationsDE.csv</a></div></div></div></div></div><div id="js--add-block__download" class="article__content--add-box slds-m-top--medium"><div class="slds-p-around--x-large"><div class="slds-p-top--xx-small slds-p-bottom--x-small"></div></div></div><p><br></p><img src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/8bf41ce56148f99901322f125c0c13a5.png"><img src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/e98e3271973afdb4d9e18ba37fc07eab.png"><p></p><div class="slds-text-heading--large slds-p-bottom--small">Full Setup Video</div><p></p>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="videoWrapper"><iframe class="vidyard_iframe" src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/oAYpGyJdwiGGAYyKgfGReB.html" width="800" height="450" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen=""></iframe>
+</div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <p><br></p><p><br></p><p>Please email lachlan.ross@salesforce.com with any issues or bugs and I'll do my best to resolve them!&nbsp;<br></p>
+      <!-- attachments -->
+      
+      <section class="slds-p-top_xx-large">
+        <div class="slds-text-heading_medium">Downloads</div>
+        <hr class="slds-m-top_medium slds-m-bottom_large">
+        <div id="js--downloads__container">
+          
+          <div>
+            <a href="https://drive.google.com/open?id=0B-Y5Q9sVXDHpM3NLQkVjOWMzbzQ" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, { eventCategory: &#39;download&#39;, eventAction: &#39;asset-community&#39;, eventLabel: &#39;community-Web Push Notification Custom Activity&#39;});">
+              <div class="slds-grid slds-p-bottom_large">
+                <span class="slds-icon_container">
+                  <svg aria-hidden="true" class="slds-icon slds-icon_large">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/doctype-sprite/svg/symbols.svg#ppt"></use>
+                  </svg>
+                </span>
+                <div class="slds-p-left_x-small slds-p-top_small">
+                  <div class="slds-text-heading_small">Web Push Notification Custom Activity</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div>
+            <a href="https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0,https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0,https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0,https://drive.google.com/open?id=0B-Y5Q9sVXDHpQVBHcUlXSFV1QU0" target="_blank" onclick="ga(&#39;send&#39;, &#39;event&#39;, { eventCategory: &#39;download&#39;, eventAction: &#39;asset-community&#39;, eventLabel: &#39;community-WebPushRegistrationsDE.csv,WebPushRegistrationsDE.csv,WebPushRegistrationsDE.csv,WebPushRegistrationsDE.csv&#39;});">
+              <div class="slds-grid slds-p-bottom_large">
+                <span class="slds-icon_container">
+                  <svg aria-hidden="true" class="slds-icon slds-icon_large">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/doctype-sprite/svg/symbols.svg#csv,csv,csv,csv"></use>
+                  </svg>
+                </span>
+                <div class="slds-p-left_x-small slds-p-top_small">
+                  <div class="slds-text-heading_small">WebPushRegistrationsDE.csv,WebPushRegistrationsDE.csv,WebPushRegistrationsDE.csv,WebPushRegistrationsDE.csv</div>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </section><!-- /js--downloads__container-->
+      
+      <!-- /attachments -->
+    </div> <!-- /slds-p-around_xx-large -->
+  </div><!-- /main body -->
+
+  <!-- SIDEBAR -->
+  <div class="slds-m-top_large slds-p-horizontal_large slds-size_1-of-1 slds-large-size_1-of-4">
+    
+    <div class="slds-m-bottom_x-large">
+      <div class="section-heading__hr">
+        <div class="section-heading__hr__text">
+          <div class="slds-text-heading_small">Related Posts</div>
+        </div><!-- /section-heading__hr__text -->
+      </div><!-- /section-heading__hr -->
+      <div id="related_posts" class="pi-list slds-m-top_medium">  <div class="igo_boxhead"><h2>People who viewed Web Push Notification Journey Builder Custom Activity also viewed</h2></div>  <div class="igo_boxbody"><div class="igo_product"><a href="https://8200494.collect.igodigital.com/redirect/v3QkFoSklnSXhBWHNpYmlJNklsWnBaWGRXYVdWM0lpd2lkU0k2SWpWa05EaGxNMkl3TFRJeVpqVXRNVEZsT0MwNFlUazFMV00zTkRnMk1EbG1aR0V4TjM0eElpd2ljaUk2TWpRek5EUXNJbkJ3SWpvd0xDSnljQ0k2TVN3aWFTSTZJakkxWldOaVpHVTJOMlk1T1RZM1l6UmxZV016TmpVeU5UQXdOMlExWWpaaElpd2lkeUk2SWxCeWIyUjFZM1FpTENKc0lqb2lhSFIwY0hNNkx5OXpZV3hsYzJadmNtTmxaR1Z0Ynk1amIyMHZZMjl0YlhWdWFYUjVMM0J2YzNRdk5XUTBPR1V6WWpBdE1qSm1OUzB4TVdVNExUaGhPVFV0WXpjME9EWXdPV1prWVRFM0wyTjFjM1J2YldsNllXSnNaUzFqZFhOMGIyMHRZV04wYVhacGRIay9jMjkxY21ObFBXbG5iMlJwWjJsMFlXd2lMQ0owSWpvaWNtVnNZWFJsWkY5d2IzTjBjeUlzSW5CdUlqb2ljSEp2WkhWamRDSjlCam9HUlZRPS0tZDYxZDZiNTIyODBiYzI4NTdlYjUxMDFhNDE0OWQ2ODYwNGQzZjU2YjkzMDJkODY5ZDIwMzdlODU1MTYyNWFjOA==">Customizable Custom Activity</a></div><div class="igo_product"><a href="https://8200494.collect.igodigital.com/redirect/v3QkFoSklnSTFBWHNpYmlJNklsWnBaWGRXYVdWM0lpd2lkU0k2SW1WbU1XVXlZV1F3TFRVeVlqVXRNVEZsT0MxaVl6TTNMV1ppWTJObE9Ea3dNbVZqTW40eElpd2ljaUk2TWpRek5EUXNJbkJ3SWpveExDSnljQ0k2TVN3aWFTSTZJakkxWldOaVpHVTJOMlk1T1RZM1l6UmxZV016TmpVeU5UQXdOMlExWWpaaElpd2lkeUk2SWxCeWIyUjFZM1FpTENKc0lqb2lhSFIwY0hNNkx5OXpZV3hsYzJadmNtTmxaR1Z0Ynk1amIyMHZZMjl0YlhWdWFYUjVMM0J2YzNRdlpXWXhaVEpoWkRBdE5USmlOUzB4TVdVNExXSmpNemN0Wm1KalkyVTRPVEF5WldNeUwyZHZiMmRzWlMxdFlYQnpMV04xYzNSdmJTMWpiMjUwWlc1MExXSnNiMk5yUDNOdmRYSmpaVDFwWjI5a2FXZHBkR0ZzSWl3aWRDSTZJbkpsYkdGMFpXUmZjRzl6ZEhNaUxDSndiaUk2SW5CeWIyUjFZM1FpZlFZNkJrVlUtLTEyNWNkNDdjZmRiNDkzMjQ2ZTZhNGUzMjkzMTUzZTU0ODc3ZmRhMzZjYzViODk0NTBmZjJjZmJiMThkYWM3NjM=">Google Maps Custom Content Block</a></div><div class="igo_product last_rec"><a href="https://8200494.collect.igodigital.com/redirect/v3QkFoSklnSkJBWHNpYmlJNklsWnBaWGRXYVdWM0lpd2lkU0k2SW1NeFkyRTNZbU13TFRoaE9HSXRNVEZsT0MwNVpUSTNMVEl4WVRsaVlXSXhPR0kxWm40eElpd2ljaUk2TWpRek5EUXNJbkJ3SWpveUxDSnljQ0k2TVN3aWFTSTZJakkxWldOaVpHVTJOMlk1T1RZM1l6UmxZV016TmpVeU5UQXdOMlExWWpaaElpd2lkeUk2SWxCeWIyUjFZM1FpTENKc0lqb2lhSFIwY0hNNkx5OXpZV3hsYzJadmNtTmxaR1Z0Ynk1amIyMHZZMjl0YlhWdWFYUjVMM0J2YzNRdll6RmpZVGRpWXpBdE9HRTRZaTB4TVdVNExUbGxNamN0TWpGaE9XSmhZakU0WWpWbUwybHVkR1ZuY21GMFpTMTBjbUZ1YzJGamRHbHZibUZzTFdWdFlXbHNjeTFwYmkxNWIzVnlMV1JsYlc5elAzTnZkWEpqWlQxcFoyOWthV2RwZEdGc0lpd2lkQ0k2SW5KbGJHRjBaV1JmY0c5emRITWlMQ0p3YmlJNkluQnliMlIxWTNRaWZRWTZCa1ZVLS00NDdkNDc5ZGQyNDgzYWU5NDdjOWQ0ZWM2YTFmYmY1Y2FmZDEyNWJhZDU3MTc5NjA1MDZmNTFjOGMwZTczYjkx">Integrate transactional emails in your demos</a></div>  </div></div>
+    </div>
+    <!-- TAGS -->
+    <div class="section-heading__hr">
+      <div class="section-heading__hr__text">
+        <div class="slds-text-heading_small">
+          Tags
+        </div>
+      </div><!-- /section-heading__hr__text -->
+    </div><!-- /section-heading__hr -->
+    <div class="slds-m-top_medium">
+      
+      <a href="https://salesforcedemo.com/community/javascript">
+        <button class="slds-button slds-m-right_x-small slds-m-bottom_x-small slds-button_neutral">JavaScript</button>
+      </a>
+      
+      <a href="https://salesforcedemo.com/community/php">
+        <button class="slds-button slds-m-right_x-small slds-m-bottom_x-small slds-button_neutral">PHP</button>
+      </a>
+      
+      <a href="https://salesforcedemo.com/community/marketing-cloud">
+        <button class="slds-button slds-m-right_x-small slds-m-bottom_x-small slds-button_neutral">Marketing Cloud</button>
+      </a>
+      
+      <a href="https://salesforcedemo.com/community/journey-builder">
+        <button class="slds-button slds-m-right_x-small slds-m-bottom_x-small slds-button_neutral">Journey Builder</button>
+      </a>
+      
+      <a href="https://salesforcedemo.com/community/retail">
+        <button class="slds-button slds-m-right_x-small slds-m-bottom_x-small slds-button_neutral">Retail</button>
+      </a>
+      
+    </div><!-- /div-->
+    <!-- /TAGS -->
+  </div>
+</div><!-- slds-container-x-large -->
+
+<!-- FOOTER -->
+
+
+
+
+  </main>
+
+  <!-- LOADING STATUS INDICATOR -->
+  <div class="loading-status-indicator slds-m-vertical_x-large">
+    <div class="slds-spinner_container">
+      <div class="slds-spinner slds-spinner_brand slds-spinner_medium" role="alert">
+        <span class="slds-assistive-text">Loading</span>
+        <div class="slds-spinner__dot-a"></div>
+        <div class="slds-spinner__dot-b"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- collections -->
+  <!-- modal__add-to-collection -->
+  <div role="dialog" tabindex="-1" aria-labelledby="header43" id="collections-modal-add" class="slds-modal slds-fade-in-open modal__add-to-collection slds-hide">
+    <div class="slds-modal__container">
+      <div class="slds-modal__header">
+        <button class="slds-button slds-modal__close slds-button_icon-inverse js--close-col-add">
+          <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="header43" class="slds-text-heading_medium">Add to a Collection</h2>
+        <p class="slds-m-top_x-small">Select a collection you've already created, or make a new one.</p>
+      </div> <!--/.slds-modal__header -->
+      <div class="slds-modal__content slds-p-horizontal_medium slds-p-top_medium slds-p-bottom_x-large">
+        <div class="slds-container_small slds-container_center">
+          <div class="slds-form_stacked">
+            <fieldset class="slds-form-element">
+              <div class="slds-form-element__control">
+                <div class="slds-radio_button-group" id="collections-modal-add-list">
+                  <!-- LOOPED RADIOS IN HERE -->
+                </div><!--/.slds-radio_button-group -->
+              </div><!--/.slds-form-element__control -->
+            </fieldset><!--/.slds-form-element -->
+          </div><!--/.slds-form_stacked -->
+        </div> <!--/.slds-container_small -->
+      </div> <!-- slds-modal__content_ -->
+      <div class="slds-modal__footer slds-modal__footer_directional">
+        <button type="submit" class="slds-button js--new-collection">
+          <svg aria-hidden="true" class="slds-button__icon slds-button__icon_left">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+          </svg>Create New Collection
+        </button>
+        <button class="slds-button slds-button_neutral js--close-col-add">Cancel</button>
+        <button class="slds-button slds-button_brand js--done-col-add" id="col-selector" data-itemid="0" data-collectable="x" data-collection="x">Add</button>
+      </div> <!--/.slds-modal__footer -->
+    </div> <!--/.slds-modal__container -->
+  </div> <!--/dialog -->
+  <!-- /.modal__add-to-collection -->
+  <div class="slds-backdrop slds-backdrop_open slds-hide" id="collections-modal-bkgnd"></div>
+
+
+  <!-- modal__basic create collection -->
+  <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-fade-in-open slds-hide" id="collections-modal-create">
+    <div class="slds-modal__container">
+      <div class="slds-modal__header">
+        <button class="slds-button slds-modal__close slds-button_icon-inverse js--close-col-create">
+          <svg aria-hidden="true" class="slds-button__icon slds-button__icon_large">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <h2 id="header43" class="slds-text-heading_medium">Create a New Collection</h2>
+        <p class="slds-m-top_x-small">Give us a few more details about your new collection.</p>
+      </div> <!--/.slds-modal__header -->
+      <div class="slds-modal__content slds-p-horizontal_medium slds-p-top_medium slds-p-bottom_x-large">
+        <div class="slds-container_small slds-container_center">
+          <div class="slds-form_stacked js--create-col-form-wrapper">
+            <div id="js--create-col-form">
+              <form id="createCollection_form" name="createCollection_form">
+                <div class="slds-form-element">
+                  <label class="slds-form-element__label" for="inputSample2">Title</label>
+                  <div class="slds-form-element__control">
+                    <input class="slds-input" name="collectionTitle" type="text" maxlength="100"></div>
+                  </div><!--/.slds-form-element -->
+                  <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="inputSample3">Description</label>
+                    <div class="slds-form-element__control">
+                      <input class="slds-input" name="collectionDescription" type="text" maxlength="150">
+                      <input name="collectable" id="collectable" type="hidden">
+                      <input name="itemID" id="itemID" type="hidden">
+                    </div>
+                  </div><!--/.slds-form-element -->
+                  <div class="slds-form-element">
+                    <label class="slds-form-element__label" for="select-01">Privacy</label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <select id="collectionisPublic" name="collectionisPublic" class="slds-select">
+                          <option value="false">Just Me (Private)</option>
+                          <option value="true">Everyone (Shared)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div><!--/.slds-form-element -->
+                </form>
+              </div>
+            </div><!--/.slds-form_stacked -->
+          </div> <!--/.slds-container_small -->
+        </div> <!-- slds-modal__content_ -->
+        <div class="slds-modal__footer">
+          <button class="slds-button slds-button_neutral js--close-col-create">Cancel</button>
+          <button class="slds-button slds-button_brand js--create-col">Create Collection</button>
+        </div> <!--/.slds-modal__footer -->
+      </div> <!--/.slds-modal__container -->
+    </div> <!--/dialog -->
+  <!-- /.modal__basic create collection -->
+
+
+
+  
+
+  <!-- /collections -->
+  <footer id="footer">
+    <div class="slds-container_x-large slds-container_center slds-p-horizontal_small">
+      <div class="footer__inner slds-grid slds-grid_vertical-align-center slds-grid_align-center">
+          <a href="https://salesforcedemo.com/about-us"><img src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/logo-rd.svg" width="450px"></a>
+
+      </div><!-- /.hero__inner slds-grid slds-grid_vertical-align-center -->
+    </div><!-- /.slds-container_x-large slds-container_center slds-p-horizontal_small -->
+  </footer>
+
+</div>
+
+  <!-- All pages need these -->
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/collect.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery-ui.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/popper.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/api.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/search.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/xss.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/templates.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.validate.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.slds-modal.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.slds-tabs.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.slds-popover.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.slds-toast.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.slds-form-validation.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/jquery.match-card-height.min.js"></script>
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/collections.js"></script>
+
+  <script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/prism.min.js"></script>
+<script src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/recommend.js"></script>
+
+  <script>
+  (function($) {
+    _etmc.push(['setOrgId', 8200494]);
+    _etmc.push(['setUserInfo', { email: '9f956c30-2588-11e8-9967-1de3036acddc', details: {} } ]);
+    
+    
+_etmc.push(['trackPageView', { item: '62f3d900-22f5-11e8-8a95-c748609fda17' }]);
+
+    
+
+    // manage toasts
+    var message = {};
+    if (message && message.toast) {
+      for(var i = 0; i < message.toast.length; i++) {
+        $.toast({
+          heading: message.toast[i].heading,
+          details: message.toast[i].details,
+          type: message.toast[i].type || 'info',
+          hideAfter: 2000,
+        });
+      }
+    }
+
+    $(function () {
+
+      // Mobile nav button
+      $('.header__nav-button').on('click', function() {
+        $('#page-header').toggleClass('is-open');
+        $('body').scrollTop(0).toggleClass('is-fixed');
+      });
+
+      // Close/open mobile nav if window is wide enough for inline menu
+      $(window).on('load resize', function() {
+        if ($(window).width() >= 1150) {
+          if ($('#page-header').hasClass('is-open')) {
+            $('#page-header').removeClass('is-open');
+          }
+          if ($('body').hasClass('is-fixed')) {
+            $('body').removeClass('is-fixed');
+          }
+        }
+      });
+
+      $('#contentShareFilter').click(function () {
+        if($('#contentShareFilter :checkbox:checked').length > 0) {
+          $('.filterContent').removeAttr('disabled');
+        } else {
+          $('.filterContent').prop('disabled', true);
+        }
+      });
+
+      $('#search-btn').on('click', function(e) {
+        e.stopPropagation();
+
+        $('#global-search-bar').toggleClass('is-open');
+        $('#global-search-input').focus();
+      });
+
+      $('.slds-pill__remove').on('click', function() {
+        $(this).parents('.slds-pill').remove();
+      });
+
+      $(window).on('click', function(e) {
+        if (!$(e.target).closest('#global-search-bar').length) {
+          $('#global-search-bar').removeClass('is-open');
+          $('#global-search-input').blur();
+        }
+      });
+
+      $('#global-search-bar .search').search({
+        type: 'category',
+        apiSettings: {
+          url: '/search/query?q={query}'
+        },
+        fields: {
+          results: 'results',
+          title: 'title',
+          url: 'url'
+        },
+        minCharacters: 3
+      });
+
+      // global nav active state
+      const urlPath = window.location.pathname;
+
+      switch (urlPath) {
+        case (urlPath.match('^\/industries') || {}).input:
+        $ ('.nav-industries').addClass('global-nav-is-active');
+            break;
+        case (urlPath.match('^\/community') || {}).input:
+          $('.nav-community').addClass('global-nav-is-active');
+            break;
+        case (urlPath.match('^\/faq') || {}).input:
+          $('.nav-faq').addClass('global-nav-is-active');
+            break;
+        case (urlPath.match('^\/apps') || {}).input:
+          $('.nav-apps').addClass('global-nav-is-active');
+            break;
+        case (urlPath.match('^\/design-center') || {}).input:
+          $('.nav-design-center').addClass('global-nav-is-active');
+          break;
+        case (urlPath.match('^\/demo-support') || {}).input:
+          $('.nav-demo-support').addClass('global-nav-is-active');
+          break;
+      }
+
+      // set active state on vertical navs
+      $('.slds-nav-vertical a[href="' + urlPath + '"]')
+        .parents('li')
+        .addClass('slds-is-active');
+    });
+  })(jQuery);
+  </script><div style="display: none;"><img src="./Web Push Notification Journey Builder Custom Activity _ Demo Center_files/track_page_view" width="0" height="0" title="blank image" aria-hidden="true" style="display: none;"></div>
+
+  <script>
+    $.fn.OneClickSelect = function(){
+  return $(this).on('click',function(){
+
+     var range, selection;
+     if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(this);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    } else if (document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(this);
+        range.select();
+    }
+  });
+};
+
+// Apply to these elements
+$('code').OneClickSelect();
+</script>
+
+  <div class="slds-backdrop"></div>
+
+
+<div id="tw-is-installed"></div><div id="dw-is-installed"></div></body></html>
